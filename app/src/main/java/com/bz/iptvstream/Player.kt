@@ -184,12 +184,12 @@ fun PlayerScreen(st: AppState, pl: Playable) {
                 Text("Oynatıcı ayarları", color = C.text, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                 Text("Motor", color = C.mute, fontSize = 11.sp)
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Pill("Yerleşik", !useVlc) { st.setEngine(1); useVlc = false }
-                    Pill("VLC", useVlc) { st.setEngine(2); useVlc = true }
+                    Pill("Yerleşik", !useVlc) { st.chooseEngine(1); useVlc = false }
+                    Pill("VLC", useVlc) { st.chooseEngine(2); useVlc = true }
                 }
                 Text("Görüntü", color = C.mute, fontSize = 11.sp)
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    listOf("Sığdır", "Doldur", "Zoom").forEachIndexed { i, n -> Pill(n, st.resize == i) { st.setResize(i); eng?.let { } } }
+                    listOf("Sığdır", "Doldur", "Zoom").forEachIndexed { i, n -> Pill(n, st.resize == i) { st.chooseResize(i); eng?.let { } } }
                 }
                 if (isLive && cur.archive && cur.streamId != null) {
                     Text("Geçmiş yayınlar", color = C.mute, fontSize = 11.sp)

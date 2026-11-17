@@ -413,11 +413,11 @@ fun SettingsScreen(st: AppState) {
                         Text("Oynatıcı", color = C.text, fontSize = 20.sp, fontWeight = FontWeight.Bold)
                         Text("Oynatıcı motoru (TS, MKV, MP4, HLS dahil tüm formatlar)", color = C.mute, fontSize = 12.sp)
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf("Otomatik", "Yerleşik", "VLC").forEachIndexed { i, n -> Pill(n, st.engine == i) { st.setEngine(i) } }
+                            listOf("Otomatik", "Yerleşik", "VLC").forEachIndexed { i, n -> Pill(n, st.engine == i) { st.chooseEngine(i) } }
                         }
                         Text("Görüntü oranı", color = C.mute, fontSize = 12.sp)
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf("Sığdır", "Doldur", "Yakınlaştır").forEachIndexed { i, n -> Pill(n, st.resize == i) { st.setResize(i) } }
+                            listOf("Sığdır", "Doldur", "Yakınlaştır").forEachIndexed { i, n -> Pill(n, st.resize == i) { st.chooseResize(i) } }
                         }
                         Text("Otomatik: önce yerleşik oynatıcı denenir, açılmayan yayında VLC devreye girer.", color = C.mute, fontSize = 12.sp)
                     }

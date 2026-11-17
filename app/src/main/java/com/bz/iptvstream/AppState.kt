@@ -106,8 +106,8 @@ class AppState(val ctx: Context) {
     var pin: String
         get() = sp.getString("pin", "1234") ?: "1234"
         set(v) { sp.edit().putString("pin", v).apply() }
-    fun setEngine(v: Int) { engine = v; sp.edit().putInt("engine", v).apply() }
-    fun setResize(v: Int) { resize = v; sp.edit().putInt("resize", v).apply() }
+    fun chooseEngine(v: Int) { engine = v; sp.edit().putInt("engine", v).apply() }
+    fun chooseResize(v: Int) { resize = v; sp.edit().putInt("resize", v).apply() }
 
     fun play(it: Item, openPast: Boolean = false) {
         addRecent(it.key)
