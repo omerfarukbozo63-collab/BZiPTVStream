@@ -351,12 +351,12 @@ fun SearchScreen(st: AppState) {
         Column(Modifier.fillMaxSize().padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             OutlinedTextField(q, { q = it }, label = { Text("Kanal, film veya dizi ara") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             LazyColumn(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                items(res) { it ->
-                    Fx({ openItem(st, it) }, Modifier.fillMaxWidth(), RoundedCornerShape(10.dp), C.card) {
+                items(res) { r ->
+                    Fx({ openItem(st, r) }, Modifier.fillMaxWidth(), RoundedCornerShape(10.dp), C.card) {
                         Row(Modifier.padding(10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                            Text(it.type.label, color = C.accent, fontSize = 10.sp, fontWeight = FontWeight.Bold, modifier = Modifier.width(60.dp))
-                            Text(it.name, color = C.text, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
-                            Text(it.group, color = C.mute, fontSize = 10.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 160.dp))
+                            Text(r.type.label, color = C.accent, fontSize = 10.sp, fontWeight = FontWeight.Bold, modifier = Modifier.width(60.dp))
+                            Text(r.name, color = C.text, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
+                            Text(r.group, color = C.mute, fontSize = 10.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 160.dp))
                         }
                     }
                 }
